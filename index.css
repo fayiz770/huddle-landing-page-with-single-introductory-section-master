@@ -5,9 +5,141 @@
 }
 
 :root {
-    --violet: hsl(257, 40%, 49%);
+    --violet: hsla(257, 40%, 49%, 0.7);
     --soft-magenta: hsl(300, 69%, 71%);
     --popins: 'Poppins', sans-serif;
     --open-sans: 'Open Sans', sans-serif;
 }
 
+body {
+    background: url('images/bg-mobile.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    font-family: var(--open-sans);
+}
+
+.inside-body {
+    padding: 3em 2em;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    background: var(--violet);
+    display: grid;
+    gap: 3em;
+}
+
+.logo {
+    display: flex;
+    width: 10em;
+}
+
+.hero > img {
+    width: 100%;
+}
+
+.main {
+    display: grid;
+    gap: 3em;
+}
+
+.article {
+    display: grid;
+    place-items: center;
+    gap: 2em;
+}
+
+.title {
+    letter-spacing: 0.1em;
+    font-family: var(--popins);
+    text-transform: capitalize;
+}
+
+.text {
+    line-height: 2em;
+}
+
+.button {
+    cursor: pointer;
+    padding: 1em 6em;
+    border-radius: 5em;
+    border: none;
+    font-family: var(--popins);
+    color: var(--violet);
+    font-weight: bold;
+    width: fit-content;
+    display: flex;
+}
+.icons {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+
+.icons > img {
+    cursor: pointer;
+    padding: 0.5em;
+    border: 1px solid white;
+    border-radius: 50%;
+    gap: 1em;
+    width: 2.5em;
+    height: 2.5em;
+}
+
+a {
+    color: white;
+}
+
+@media (min-width: 768px){
+    .inside-body {
+        padding: 3em 4em;
+        text-align: start;
+    }
+    .hero-image {
+        grid-area: her;
+    }
+
+    .article {
+        place-items: start;
+        grid-area: art;
+        padding: 4em 0em;
+    }
+
+    .text {
+        line-height: 1.5em;
+        padding-right: 5em;
+    }
+
+    .main {
+        align-items: start;
+        justify-content: start;
+        grid-template-areas:
+            'her art' 
+        ;
+    }
+
+    .icons {
+        justify-content: end;
+    }
+
+    .icons > img:hover {
+        border: 1px solid var(--soft-magenta);
+        color: var(--soft-magenta);
+    }
+
+    .hero {
+        width: 50vw;
+    }
+
+    .title {
+        font-size: 3em;
+        justify-content: start;
+        letter-spacing: 0;
+    }
+
+    .button:hover {
+        background: var(--soft-magenta);
+        color: white;
+    }
+}
